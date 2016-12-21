@@ -48,6 +48,7 @@ defmodule Ueberauth.Strategy.Github.OAuth do
     |> OAuth2.Client.get(url, headers, opts)
   end
 
+  # Note: This is inconsistent with other libs - options should be a keyword list, and maybe there should be one more parameter with headers
   def get_token!(params \\ [], options \\ %{}) do
     headers = Map.get(options, :headers, [])
     options = Map.get(options, :options, [])
